@@ -163,6 +163,9 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 	
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
 	
+	// ナビゲーションコントローラの中にいたら、ナビゲーションバーを隠す
+	[self.navigationController setNavigationBarHidden:YES animated:animated];
+	
 	// プレビュー開始を監視しながら撮影開始
 	[_captureSession addObserver:self forKeyPath:@"running" options:NSKeyValueObservingOptionNew context:NULL];
 	[_captureSession performSelectorInBackground:@selector(startRunning) withObject:nil];
@@ -173,6 +176,7 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 	[super viewWillDisappear:animated];
 	
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+	[self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

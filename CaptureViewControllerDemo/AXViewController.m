@@ -46,6 +46,12 @@
 - (void)captureViewController:(AXCaptureViewController *)capture didFinishCapturingImage:(UIImage *)image
 {
 	[_imageView setImage:image];
+	[capture dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)captureViewControllerDidCancel:(AXCaptureViewController *)capture
+{
+	[capture dismissViewControllerAnimated:YES completion:NULL];
 }
 
 @end
