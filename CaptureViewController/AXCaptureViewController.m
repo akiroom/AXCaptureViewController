@@ -160,9 +160,19 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
+	
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+	
 	// プレビュー開始を監視しながら撮影開始
 	[_captureSession addObserver:self forKeyPath:@"running" options:NSKeyValueObservingOptionNew context:NULL];
 	[_captureSession performSelectorInBackground:@selector(startRunning) withObject:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -196,7 +206,9 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 // 閉じる
 - (void)close:(id)sender
 {
-	[self dismissViewControllerAnimated:YES completion:NULL];
+	if ([_delegate respondsToSelector:@selector(captureViewControllerDidCancel:)]) {
+		[_delegate captureViewControllerDidCancel:self];
+	}
 }
 
 // ライブラリから写真を選ぶ
@@ -231,7 +243,6 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 		 [_previewImageView setImage:image];
 		 [_previewImageView setAlpha:1.0];
 		 [_previewImageView setHidden:NO];
-		 [[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
 		 if ([_delegate respondsToSelector:@selector(captureViewController:didFinishCapturingImage:)]) {
 			 [_delegate captureViewController:self didFinishCapturingImage:image];
 		 }
@@ -300,13 +311,12 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+	
+	[[picker presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
 	if ([_delegate respondsToSelector:@selector(captureViewController:didFinishCapturingImage:)]) {
 		UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 		[_delegate captureViewController:self didFinishCapturingImage:image];
 	}
-	[[picker presentingViewController] dismissViewControllerAnimated:YES completion:^{
-		[[self presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-	}];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
