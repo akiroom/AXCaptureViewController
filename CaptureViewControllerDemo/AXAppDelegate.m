@@ -2,9 +2,6 @@
 //  AXAppDelegate.m
 //  CaptureViewControllerDemo
 //
-//  Created by Hiroki Akiyama on 2013/01/23.
-//  Copyright (c) 2013年 Hiroki Akiyama. All rights reserved.
-//
 
 #import "AXAppDelegate.h"
 
@@ -16,7 +13,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	self.viewController = [[AXViewController alloc] initWithNibName:@"AXViewController" bundle:nil];
+	self.viewController = [[AXViewController alloc] init];
 	self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

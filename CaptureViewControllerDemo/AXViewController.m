@@ -2,9 +2,6 @@
 //  AXViewController.m
 //  CaptureViewControllerDemo
 //
-//  Created by Hiroki Akiyama on 2013/01/23.
-//  Copyright (c) 2013年 Hiroki Akiyama. All rights reserved.
-//
 
 #import "AXViewController.h"
 
@@ -17,13 +14,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	[self.view setBackgroundColor:[UIColor whiteColor]];
+	
+	self.imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+	[_imageView setContentMode:UIViewContentModeScaleAspectFill];
+	
+	UIButton *launchButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[launchButton setTitle:@"Launch" forState:UIControlStateNormal];
+	[launchButton addTarget:self action:@selector(launch:) forControlEvents:UIControlEventTouchUpInside];
+	[launchButton sizeToFit];
+	[launchButton setCenter:self.view.center];
+	
+	[self.view addSubview:_imageView];
+	[self.view addSubview:launchButton];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)launch:(id)sender
+{
+	AXCaptureViewController *captureViewController = [[AXCaptureViewController alloc] init];
+	[captureViewController setModalPresentationStyle:UIModalPresentationFormSheet];
+	[captureViewController setDelegate:self];
+	[self presentViewController:captureViewController animated:YES completion:NULL];
+}
+
+- (void)captureViewController:(AXCaptureViewController *)capture didFinishCapturingImage:(UIImage *)image
+{
+	[_imageView setImage:image];
 }
 
 @end

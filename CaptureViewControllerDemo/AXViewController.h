@@ -2,12 +2,10 @@
 //  AXViewController.h
 //  CaptureViewControllerDemo
 //
-//  Created by Hiroki Akiyama on 2013/01/23.
-//  Copyright (c) 2013年 Hiroki Akiyama. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
+#import "AXCaptureViewController.h"
 
-@interface AXViewController : UIViewController
-
+@interface AXViewController : UIViewController <AXCaptureViewControllerDelegate>
+@property (strong, nonatomic) UIImageView *imageView;
 @end

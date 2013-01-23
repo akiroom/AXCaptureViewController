@@ -17,7 +17,16 @@
 		5182E89716AFCB8600F009D5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E89616AFCB8600F009D5 /* Default@2x.png */; };
 		5182E89916AFCB8600F009D5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E89816AFCB8600F009D5 /* Default-568h@2x.png */; };
 		5182E89C16AFCB8600F009D5 /* AXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5182E89B16AFCB8600F009D5 /* AXViewController.m */; };
-		5182E89F16AFCB8600F009D5 /* AXViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5182E89D16AFCB8600F009D5 /* AXViewController.xib */; };
+		5182E8A816AFCBCC00F009D5 /* AXCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5182E8A716AFCBCC00F009D5 /* AXCaptureViewController.m */; };
+		5182E8AA16AFD4DD00F009D5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5182E8A916AFD4DD00F009D5 /* AVFoundation.framework */; };
+		5182E8AD16AFE3D900F009D5 /* ax-icon-camera-flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E8AB16AFE3D900F009D5 /* ax-icon-camera-flash@2x.png */; };
+		5182E8AE16AFE3D900F009D5 /* ax-icon-camera-flip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E8AC16AFE3D900F009D5 /* ax-icon-camera-flip@2x.png */; };
+		5182E8B016B0063D00F009D5 /* ax-icon-camera-close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E8AF16B0063D00F009D5 /* ax-icon-camera-close@2x.png */; };
+		5182E8B216B00E9800F009D5 /* ax-icon-camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E8B116B00E9800F009D5 /* ax-icon-camera@2x.png */; };
+		5182E8B516B00F9C00F009D5 /* AXTranslucentRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5182E8B416B00F9C00F009D5 /* AXTranslucentRoundedButton.m */; };
+		5182E8B716B010CB00F009D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5182E8B616B010CB00F009D5 /* QuartzCore.framework */; };
+		5182E8BA16B01A8400F009D5 /* AXCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5182E8B916B01A8400F009D5 /* AXCameraButton.m */; };
+		5182E8BC16B0204C00F009D5 /* ax-icon-camera-picker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5182E8BB16B0204C00F009D5 /* ax-icon-camera-picker@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +45,19 @@
 		5182E89816AFCB8600F009D5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		5182E89A16AFCB8600F009D5 /* AXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AXViewController.h; sourceTree = "<group>"; };
 		5182E89B16AFCB8600F009D5 /* AXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXViewController.m; sourceTree = "<group>"; };
-		5182E89E16AFCB8600F009D5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/AXViewController.xib; sourceTree = "<group>"; };
+		5182E8A616AFCBCC00F009D5 /* AXCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXCaptureViewController.h; path = CaptureViewController/AXCaptureViewController.h; sourceTree = SOURCE_ROOT; };
+		5182E8A716AFCBCC00F009D5 /* AXCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXCaptureViewController.m; path = CaptureViewController/AXCaptureViewController.m; sourceTree = SOURCE_ROOT; };
+		5182E8A916AFD4DD00F009D5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5182E8AB16AFE3D900F009D5 /* ax-icon-camera-flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ax-icon-camera-flash@2x.png"; path = "CaptureViewController/ax-icon-camera-flash@2x.png"; sourceTree = SOURCE_ROOT; };
+		5182E8AC16AFE3D900F009D5 /* ax-icon-camera-flip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ax-icon-camera-flip@2x.png"; path = "CaptureViewController/ax-icon-camera-flip@2x.png"; sourceTree = SOURCE_ROOT; };
+		5182E8AF16B0063D00F009D5 /* ax-icon-camera-close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ax-icon-camera-close@2x.png"; path = "CaptureViewController/ax-icon-camera-close@2x.png"; sourceTree = SOURCE_ROOT; };
+		5182E8B116B00E9800F009D5 /* ax-icon-camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ax-icon-camera@2x.png"; path = "CaptureViewController/ax-icon-camera@2x.png"; sourceTree = SOURCE_ROOT; };
+		5182E8B316B00F9C00F009D5 /* AXTranslucentRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AXTranslucentRoundedButton.h; path = CaptureViewController/AXTranslucentRoundedButton.h; sourceTree = SOURCE_ROOT; };
+		5182E8B416B00F9C00F009D5 /* AXTranslucentRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AXTranslucentRoundedButton.m; path = CaptureViewController/AXTranslucentRoundedButton.m; sourceTree = SOURCE_ROOT; };
+		5182E8B616B010CB00F009D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5182E8B816B01A8400F009D5 /* AXCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXCameraButton.h; sourceTree = "<group>"; };
+		5182E8B916B01A8400F009D5 /* AXCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXCameraButton.m; sourceTree = "<group>"; };
+		5182E8BB16B0204C00F009D5 /* ax-icon-camera-picker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ax-icon-camera-picker@2x.png"; path = "CaptureViewController/ax-icon-camera-picker@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5182E8B716B010CB00F009D5 /* QuartzCore.framework in Frameworks */,
+				5182E8AA16AFD4DD00F009D5 /* AVFoundation.framework in Frameworks */,
 				5182E88316AFCB8600F009D5 /* UIKit.framework in Frameworks */,
 				5182E88516AFCB8600F009D5 /* Foundation.framework in Frameworks */,
 				5182E88716AFCB8600F009D5 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +96,8 @@
 		5182E88116AFCB8600F009D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5182E8A916AFD4DD00F009D5 /* AVFoundation.framework */,
+				5182E8B616B010CB00F009D5 /* QuartzCore.framework */,
 				5182E88216AFCB8600F009D5 /* UIKit.framework */,
 				5182E88416AFCB8600F009D5 /* Foundation.framework */,
 				5182E88616AFCB8600F009D5 /* CoreGraphics.framework */,
@@ -83,11 +108,11 @@
 		5182E88816AFCB8600F009D5 /* CaptureViewControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5182E8A516AFCBA500F009D5 /* CaptureViewController */,
 				5182E89116AFCB8600F009D5 /* AXAppDelegate.h */,
 				5182E89216AFCB8600F009D5 /* AXAppDelegate.m */,
 				5182E89A16AFCB8600F009D5 /* AXViewController.h */,
 				5182E89B16AFCB8600F009D5 /* AXViewController.m */,
-				5182E89D16AFCB8600F009D5 /* AXViewController.xib */,
 				5182E88916AFCB8600F009D5 /* Supporting Files */,
 			);
 			path = CaptureViewControllerDemo;
@@ -105,6 +130,24 @@
 				5182E89816AFCB8600F009D5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5182E8A516AFCBA500F009D5 /* CaptureViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5182E8B816B01A8400F009D5 /* AXCameraButton.h */,
+				5182E8B916B01A8400F009D5 /* AXCameraButton.m */,
+				5182E8B316B00F9C00F009D5 /* AXTranslucentRoundedButton.h */,
+				5182E8B416B00F9C00F009D5 /* AXTranslucentRoundedButton.m */,
+				5182E8A616AFCBCC00F009D5 /* AXCaptureViewController.h */,
+				5182E8A716AFCBCC00F009D5 /* AXCaptureViewController.m */,
+				5182E8B116B00E9800F009D5 /* ax-icon-camera@2x.png */,
+				5182E8AF16B0063D00F009D5 /* ax-icon-camera-close@2x.png */,
+				5182E8AB16AFE3D900F009D5 /* ax-icon-camera-flash@2x.png */,
+				5182E8AC16AFE3D900F009D5 /* ax-icon-camera-flip@2x.png */,
+				5182E8BB16B0204C00F009D5 /* ax-icon-camera-picker@2x.png */,
+			);
+			name = CaptureViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,7 +206,11 @@
 				5182E89516AFCB8600F009D5 /* Default.png in Resources */,
 				5182E89716AFCB8600F009D5 /* Default@2x.png in Resources */,
 				5182E89916AFCB8600F009D5 /* Default-568h@2x.png in Resources */,
-				5182E89F16AFCB8600F009D5 /* AXViewController.xib in Resources */,
+				5182E8AD16AFE3D900F009D5 /* ax-icon-camera-flash@2x.png in Resources */,
+				5182E8AE16AFE3D900F009D5 /* ax-icon-camera-flip@2x.png in Resources */,
+				5182E8B016B0063D00F009D5 /* ax-icon-camera-close@2x.png in Resources */,
+				5182E8B216B00E9800F009D5 /* ax-icon-camera@2x.png in Resources */,
+				5182E8BC16B0204C00F009D5 /* ax-icon-camera-picker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +224,9 @@
 				5182E88F16AFCB8600F009D5 /* main.m in Sources */,
 				5182E89316AFCB8600F009D5 /* AXAppDelegate.m in Sources */,
 				5182E89C16AFCB8600F009D5 /* AXViewController.m in Sources */,
+				5182E8A816AFCBCC00F009D5 /* AXCaptureViewController.m in Sources */,
+				5182E8B516B00F9C00F009D5 /* AXTranslucentRoundedButton.m in Sources */,
+				5182E8BA16B01A8400F009D5 /* AXCameraButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,14 +239,6 @@
 				5182E88C16AFCB8600F009D5 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		5182E89D16AFCB8600F009D5 /* AXViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5182E89E16AFCB8600F009D5 /* en */,
-			);
-			name = AXViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
