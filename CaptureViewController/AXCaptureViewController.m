@@ -244,15 +244,20 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 			 image = UIGraphicsGetImageFromCurrentImageContext();
 			 UIGraphicsEndImageContext();
 		 }
-		 [_previewImageView setImage:image];
-		 [_previewImageView setAlpha:1.0];
-		 [_previewImageView setHidden:NO];
+		 [self showPreviewWithImage:image];
 		 if ([_delegate respondsToSelector:@selector(captureViewController:didFinishCapturingImage:)]) {
 			 [_delegate captureViewController:self didFinishCapturingImage:image];
 		 }
 	 }];
 }
 
+- (void)showPreviewWithImage:(UIImage *)image
+{
+	[_previewImageView setImage:image];
+	[_previewImageView setAlpha:1.0];
+	[_previewImageView setHidden:NO];
+
+}
 // フラッシュの切り替え
 - (void)toggleFlash:(id)sender
 {
@@ -315,12 +320,13 @@ static CGFloat const BOTTOM_TOOLBAR_HEIGHT = 64.0;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-	
-	[[picker presentingViewController] dismissViewControllerAnimated:YES completion:NULL];
-	if ([_delegate respondsToSelector:@selector(captureViewController:didFinishCapturingImage:)]) {
-		UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-		[_delegate captureViewController:self didFinishCapturingImage:image];
-	}
+	UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+	[self showPreviewWithImage:image];
+	[[picker presentingViewController] dismissViewControllerAnimated:YES completion:^{
+		if ([_delegate respondsToSelector:@selector(captureViewController:didFinishCapturingImage:)]) {
+			[_delegate captureViewController:self didFinishCapturingImage:image];
+		}
+	}];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
